@@ -29,14 +29,25 @@ alphabets = [
 
 $(() => {
   $("#typeSelect").on("change", () => {
-    if ($("#typeSelect").val() === "excrypt") {
+    console.log("change");
+    if ($("#typeSelect").val() === "encrypt") {
       $("#encryptBtn").html("Encrypt");
       $("#textLabel").text("Enter Plain Text");
       $("#resultLabel").text("Cipher Text");
+      $("#plainTextArea").attr("placeholder", "Enter plain text...");
+      $("#resultTextArea").attr(
+        "placeholder",
+        "Cipher text will appear here..."
+      );
     } else {
       $("#encryptBtn").html("Decrypt");
       $("#textLabel").text("Enter Cipher Text");
       $("#resultLabel").text("Plain Text");
+      $("#plainTextArea").attr("placeholder", "Enter cipher text...");
+      $("#resultTextArea").attr(
+        "placeholder",
+        "Plain text will appear here..."
+      );
     }
   });
 
