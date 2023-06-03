@@ -30,10 +30,11 @@
             <div class="container content">
                 <label for="cipherSelect" class="form-label">Select Cipher</label>
                 <select class="form-select" aria-label="Default select example" id="cipherSelect">
-                    <option selected>Select Cipher</option>
+                    <option>Select Cipher</option>
                     <option value="transposition">Transposition</option>
                     <option value="ceaser">Ceaser</option>
                     <option value="vigenere">Vigenere</option>
+                    <option selected value="railFence">Rail Fence</option>
                 </select>
             </div>
             <div class="container content">
@@ -48,7 +49,7 @@
                     <div class="col-12 col-md-6 content">
                         <label for="plainTextArea" class="form-label" id="textLabel">Enter Plain Text</label>
                         <textarea class="form-control" id="plainTextArea" rows="7"
-                            placeholder="Enter plain text..."></textarea>
+                            placeholder="Enter plain text...">wearediscoveredfleeatonce</textarea>
                     </div>
                     <div class="col-12 col-md-6 content">
                         <label for="resultTextArea" class="form-label" id="resultLabel">Cipher Text</label>
@@ -59,7 +60,7 @@
             </div>
             <div class="container content">
                 <label for="key" class="form-label">Key</label>
-                <input class="form-control" id="key" type="text">
+                <input class="form-control" id="key" type="text" value="3">
             </div>
             <div class="container content" id="btn-container">
                 <button type="button" class="btn btn-lg my-btn" id="encryptBtn">Encrypt</button>

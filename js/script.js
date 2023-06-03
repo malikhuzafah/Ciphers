@@ -72,17 +72,33 @@ $(() => {
           alert("Key must not contain any number character!");
         }
         $("#resultTextArea").html(vigenereEn(plainText, key));
+      } else if (cipher === "railFence") {
+        if (parseInt(key) === NaN) {
+          alert("Key must be a number for rail fence cipher");
+        }
+        $("#resultTextArea").html(railFenceEn(plainText, parseInt(key)));
       } else {
         alert("Select a cipher");
         return;
       }
     } else {
       if (cipher === "transposition") {
+        if (parseInt(key) === NaN) {
+          alert("Key must be a number for transposition cipher");
+        }
         $("#resultTextArea").html(transpositionDe(plainText, parseInt(key)));
       } else if (cipher === "ceaser") {
+        if (parseInt(key) === NaN) {
+          alert("Key must be a number for ceaser cipher");
+        }
         $("#resultTextArea").html(ceaserDe(plainText, parseInt(key)));
       } else if (cipher === "vigenere") {
         $("#resultTextArea").html(vigenereDe(plainText, key));
+      } else if (cipher === "railFence") {
+        if (parseInt(key) === NaN) {
+          alert("Key must be a number for rail fence cipher");
+        }
+        $("#resultTextArea").html(railFenceDe(plainText, parseInt(key)));
       } else {
         alert("Select a cipher");
         return;
@@ -187,6 +203,28 @@ function vigenereDe(cipherText, key) {
       code += 26;
     }
     result += alphabets[code];
+  }
+  return result;
+}
+
+function railFenceEn(plainText, key) {
+  console.log("rail");
+  result = "";
+  var flag = key % 2 == 0;
+  var inc = key + 1;
+  var count = 0;
+  var i = 0;
+  var c = 0;
+  while (count < plainText.length) {
+    console.log("i: " + i);
+    result += plainText[i];
+    i += inc;
+    if (i >= plainText.length) {
+      inc = inc > key ? (inc = parseInt(key / 2) + 1) : key + 1;
+      c++;
+      i = c;
+    }
+    count++;
   }
   return result;
 }
