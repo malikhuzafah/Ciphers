@@ -6,6 +6,11 @@ body {
   padding: 10px;
 }
 
+.form-select,
+.form-control {
+  border-radius: 25px;
+}
+
 .my-btn {
   border-color: #1a1a1d;
   border: 2px solid;
