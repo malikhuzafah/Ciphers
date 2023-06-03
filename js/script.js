@@ -43,16 +43,39 @@ $(() => {
   $("#encryptBtn").click(() => {
     var plainText = $("#plainTextArea").val();
     var key = $("#key").val();
-    var result = "";
+    var type = $("#typeSelect").val();
     var cipher = $("#cipherSelect").val();
-    if (cipher === "transposition") {
-      $("#resultTextArea").html(transpositionDe(plainText, parseInt(key)));
-    } else if (cipher === "ceaser") {
-      $("#resultTextArea").html(ceaserDe(plainText, parseInt(key)));
-    } else if (cipher === "vigenere") {
-      $("#resultTextArea").html(vigenereDe(plainText, key));
+    if (type === "encrypt") {
+      if (cipher === "transposition") {
+        if (parseInt(key) === NaN) {
+          alert("Key must be a number for transposition cipher");
+        }
+        $("#resultTextArea").html(transpositionEn(plainText, parseInt(key)));
+      } else if (cipher === "ceaser") {
+        if (parseInt(key) === NaN) {
+          alert("Key must be a number for ceaser cipher");
+        }
+        $("#resultTextArea").html(ceaserEn(plainText, parseInt(key)));
+      } else if (cipher === "vigenere") {
+        if (containsNumbers(key)) {
+          alert("Key must not contain any number character!");
+        }
+        $("#resultTextArea").html(vigenereEn(plainText, key));
+      } else {
+        alert("Select a cipher");
+        return;
+      }
     } else {
-      alert("Select a cipher");
+      if (cipher === "transposition") {
+        $("#resultTextArea").html(transpositionDe(plainText, parseInt(key)));
+      } else if (cipher === "ceaser") {
+        $("#resultTextArea").html(ceaserDe(plainText, parseInt(key)));
+      } else if (cipher === "vigenere") {
+        $("#resultTextArea").html(vigenereDe(plainText, key));
+      } else {
+        alert("Select a cipher");
+        return;
+      }
     }
   });
 });
@@ -155,4 +178,8 @@ function vigenereDe(cipherText, key) {
     result += alphabets[code];
   }
   return result;
+}
+
+function containsNumbers(str) {
+  return /[0-9]/.test(str);
 }
