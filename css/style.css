@@ -1,0 +1,18 @@
+body {
+  background-color: #eee2dc;
+}
+
+footer {
+  background-color: #1a1a1d;
+  text-align: center;
+  padding: 10px;
+}
+
+#footer-link {
+  text-decoration: none;
+  color: #fff;
+}
+
+#footer-link:hover {
+  color: #979797;
+}
