@@ -2,10 +2,32 @@ body {
   background-color: #eee2dc;
 }
 
+.content {
+  padding: 10px;
+}
+
+.my-btn {
+  border-color: #1a1a1d;
+  border: 2px solid;
+  background-color: #eee2dc;
+  color: #1a1a1d;
+  border-radius: 50px;
+  transition: 0.5s;
+  font-weight: bolder;
+}
+
+.my-btn:hover {
+  background-color: #1a1a1d;
+  color: #eee2dc;
+}
+
 footer {
   background-color: #1a1a1d;
   text-align: center;
   padding: 10px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 #footer-link {

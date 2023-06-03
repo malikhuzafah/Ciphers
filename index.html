@@ -23,39 +23,51 @@
 
 <body>
     <div class="container">
-        <div class="container" id="title" style="text-align: center;">
+        <div class="container" id="title" style="text-align: center; padding: 50px; font-weight: bolder;">
             <span class="h1">Ciphers</span>
         </div>
         <div class="container">
-            <select class="form-select" aria-label="Default select example" id="cipherSelect">
-                <option selected>Select Cipher</option>
-                <option value="transposition">Transposition</option>
-                <option value="ceaser">Ceaser</option>
-                <option value="vigenere">Vigenere</option>
-            </select>
-            <select class="form-select" aria-label="Default select example" id="typeSelect">
-                <option value="encrypt" selected>Encrypt</option>
-                <option value="decrypt">Decrypt</option>
-            </select>
-            <div class="row">
-                <div class="col-6">
-                    <label for="plainTextArea" class="form-label" id="textLabel">Enter Plain Text</label>
-                    <textarea class="form-control" id="plainTextArea" rows="3"></textarea>
-                </div>
-                <div class="col-6">
-                    <label for="resultTextArea" class="form-label" id="resultLabel">Cipher Text</label>
-                    <textarea class="form-control" id="resultTextArea" rows="3" disabled></textarea>
+            <div class="container content">
+                <label for="cipherSelect" class="form-label">Select Cipher</label>
+                <select class="form-select" aria-label="Default select example" id="cipherSelect">
+                    <option selected>Select Cipher</option>
+                    <option value="transposition">Transposition</option>
+                    <option value="ceaser">Ceaser</option>
+                    <option value="vigenere">Vigenere</option>
+                </select>
+            </div>
+            <div class="container content">
+                <label for="typeSelect" class="form-label">Select Encrypt / Decrypt</label>
+                <select class="form-select" aria-label="Default select example" id="typeSelect">
+                    <option value="encrypt" selected>Encrypt</option>
+                    <option value="decrypt">Decrypt</option>
+                </select>
+            </div>
+            <div class="container content">
+                <div class="row">
+                    <div class="col-6">
+                        <label for="plainTextArea" class="form-label" id="textLabel">Enter Plain Text</label>
+                        <textarea class="form-control" id="plainTextArea" rows="3"></textarea>
+                    </div>
+                    <div class="col-6">
+                        <label for="resultTextArea" class="form-label" id="resultLabel">Cipher Text</label>
+                        <textarea class="form-control" id="resultTextArea" rows="3" disabled></textarea>
+                    </div>
                 </div>
             </div>
-            <label for="key" class="form-label">Key</label>
-            <input class="form-control" id="key" type="text">
-            <button type="button" class="btn btn-dark" id="encryptBtn">Encrypt</button>
+            <div class="container content">
+                <label for="key" class="form-label">Key</label>
+                <input class="form-control" id="key" type="text">
+            </div>
+            <div class="container content" style="text-align: center;">
+                <button type="button" class="btn btn-lg my-btn" id="encryptBtn">Encrypt</button>
+            </div>
         </div>
     </div>
     <footer>
         <div class="container">
-            <a id="footer-link" href="https://malikhuzafah.netlify.app">Visit my
-                website <span>&#8599;</span></a>
+            <a target="_blank" id="footer-link" href="https://malikhuzafah.netlify.app">Visit my
+                portfolio <span>&#8599;</span></a>
         </div>
     </footer>
 </body>
